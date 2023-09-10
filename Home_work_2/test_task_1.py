@@ -51,12 +51,12 @@ def test_step5():
 
 def test_step6():
     """проверка команды l (вывода списка файлов)"""
-    assert checkout(f"cd {folder_out}; 7z l arx2.7z {folder_ext}", "test_file.txt")
+    assert checkout(f"cd {folder_out}; 7z l arx2.7z {folder_ext}", f"{file_in_ext}")
 
 def test_step7():
     """проверка команды x (разархивирования с путями)"""
     res_1 = checkout(f"cd {folder_out}; 7z x arx2.7z -o{folder_ext}", "Everithing is ok")
-    res_2 = checkout(f"ls {folder_ext};", "test_file")
+    res_2 = checkout(f"ls {folder_ext};", f"{file_in_ext}")
     assert res_1 and res_2, "test 7 FAIL"
 
 
